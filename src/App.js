@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from "prop-types";
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  
+  constructor(props){
+    super(props);
+  }
+
   render() {
     return (
       <div className="App">
@@ -17,12 +23,16 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+            Learn React, { this.props.name }
           </a>
         </header>
       </div>
     );
   }
 }
+
+App.propTypes = {
+  name: PropTypes.string.isRequired
+};
 
 export default App;
